@@ -9,3 +9,9 @@ body{
     background-color: #d8dbd9;
 }
 
+#olvidarContra:hover{
+    color: rgb(0, 0, 255);
+    text-decoration:underline ;
+}
+
+
