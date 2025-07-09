@@ -86,3 +86,31 @@ body {
 #olvidarContra:hover{
     color: rgb(0, 0, 255);
 }
+
+
+
+
+/* Encabezado personalizado del offcanvas izquierdo (Perfil Usuario) */
+.custom-offcanvas-header {
+  background-color: #212529; 
+  color: white;              
+  padding-left: 1rem;        
+  padding-right: 1rem;       
+  display: flex;             
+  align-items: center;       
+  justify-content: space-between; 
+}
+
+/* Contenedor de la imagen de perfil y botón de edición */
+.perfil-foto-container {
+  position: relative;    
+  display: inline-block; 
+}
+
+/* Botón de edición (lápiz) superpuesto a la imagen de perfil */
+.editar-foto-btn {
+  position: absolute;    
+  bottom: 0;             
+  right: 0;              
+  border-radius: 50%;    
+}

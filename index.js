@@ -1,7 +1,4 @@
-// Esperamos que el DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", function () {
-
-  // Referencias a elementos del formulario
+    // Referencias a elementos del formulario
     let emailInput = document.getElementById("email");
     let passwordInput = document.getElementById("password");
     let btnIniciar = document.getElementById("enviar");
@@ -89,4 +86,3 @@ document.addEventListener("DOMContentLoaded", function () {
     if (savedData && savedData.email) {
         emailInput.value = savedData.email;
     }
-});
