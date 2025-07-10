@@ -17,11 +17,13 @@
                 <div class="p-3">
                     <div class="d-flex align-items-center gap-2">
                         <!-- Botón de perfil -->
-                        <button class="btn p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#perfilUsuario">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person icono">
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                <path d="M14 14c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4z" />
-                            </svg>
+                        <button 
+                            type="button" 
+                            class="btn btn-icon p-0 border-0 d-flex align-items-center justify-content-center"
+                            data-bs-toggle="offcanvas" 
+                            data-bs-target="#perfilUsuario"
+                        >
+                            <i class="bi bi-person-fill fs-4"></i>
                         </button>
 
                         <!-- Buscador -->
@@ -107,7 +109,7 @@
 
         <!-- Offcanvas Perfil Usuario -->
         <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="perfilUsuario">
-            <div class="offcanvas-header custom-offcanvas-header">
+            <div class="offcanvas-header custom-offcanvas-header d-flex align-items-center justify-content-between px-3">
                 <div class="d-flex align-items-center gap-2">
                     <i class="bi bi-person-fill fs-4"></i>
                     <h5 class="offcanvas-title mb-0">Información del Usuario</h5>
@@ -117,12 +119,12 @@
 
             <div class="offcanvas-body text-center">
                 <div class="perfil-foto-container">
-                    <img id="fotoPerfil" src="https://randomuser.me/api/portraits/women/20.jpg" class="img-fluid rounded-circle object-fit-cover">
-                    <button id="btnEditarFoto" class="btn btn-sm btn-secondary editar-foto-btn">
+                    <img id="fotoPerfil" src="https://randomuser.me/api/portraits/women/20.jpg" class="img-circular object-fit-cover rounded-5">
+                    <button id="btnEditarFoto" class="btn btn-sm btn-secondary editar-foto-btn"> 
                         <i class="bi bi-pencil"></i>
                     </button>
-                    <input type="file" id="inputFoto" accept="image/*" class="d-none">
                 </div>
+                <input type="file" id="inputFoto" accept="image/*" class="d-none">
                 <h5 class="mt-3" id="nombrePerfil">Maria Lopez</h5>
                 <p id="telefonoPerfil"><i class="bi bi-telephone"></i> +54 9 123 456 789</p>
                 <p id="correoPerfil"><i class="bi bi-envelope"></i> usuario@email.com</p>
@@ -169,7 +171,7 @@
 
         <!-- Offcanvas Información del contacto -->
         <div class="offcanvas offcanvas-end w-25" tabindex="-1" id="contactoInfo">
-            <div class="offcanvas-header bg-dark text-white d-flex align-items-center justify-content-between px-3">
+            <div class="offcanvas-header custom-offcanvas-header d-flex align-items-center justify-content-between px-3">
                 <div class="d-flex align-items-center gap-2">
                     <i class="bi bi-person-fill fs-4"></i>
                     <h5 class="offcanvas-title mb-0">Información de Contacto</h5>

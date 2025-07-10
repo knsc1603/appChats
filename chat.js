@@ -196,20 +196,53 @@
 
     // Al hacer clic en "Guardar cambios", guarda la info en localStorage y actualiza el perfil
     btnGuardar.addEventListener("click", function () {
+        const nombre = inputNombre.value.trim();
+        const telefono = inputTelefono.value.trim();
+        const correo = inputCorreo.value.trim();
+        const biografia = inputBiografia.value.trim();
+
+        // Expresiones regulares
+        const telefonoRegex = /^[0-9]{10,14}$/;
+        const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        const datosGuardados = JSON.parse(localStorage.getItem("perfilUsuario"));
+
+        // Si es la primera vez (no hay datos guardados), validar que todos los campos estén completos
+        if (!datosGuardados) {
+            if (!nombre || !telefono || !correo || !biografia) {
+                alert("Por favor, completá todos los campos para guardar tu perfil por primera vez.");
+                return;
+            }
+        }
+
+        // Validación del teléfono
+        if (!telefonoRegex.test(telefono)) {
+            alert("El número de teléfono debe tener solo números y entre 10 y 14 dígitos.");
+            return;
+        }
+
+        // Validación del correo electrónico
+        if (!correoRegex.test(correo)) {
+            alert("Ingresá un correo electrónico válido.");
+            return;
+        }
+
+        // Crear objeto y guardar
         const datos = {
-            nombre: inputNombre.value,
-            telefono: inputTelefono.value,
-            correo: inputCorreo.value,
-            biografia: inputBiografia.value,
-            foto: fotoPerfil.src // usa la imagen actual mostrada
+            nombre: nombre,
+            telefono: telefono,
+            correo: correo,
+            biografia: biografia,
+            foto: fotoPerfil.src
         };
-        // Guarda los datos en el almacenamiento local
+
         localStorage.setItem("perfilUsuario", JSON.stringify(datos));
         cargarPerfil();
-        // Cierra el modal después de guardar
+
         const modal = bootstrap.Modal.getInstance(document.getElementById("modalEditarPerfil"));
         modal.hide();
     });
+
 
     // Al hacer clic en el botón del lápiz, simula clic en el input de archivo
     btnEditarFoto.addEventListener("click", () => inputFoto.click());
